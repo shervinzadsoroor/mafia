@@ -1,15 +1,16 @@
 package com.shervinZadsoroor.citizen;
 
-public class CommonCitizen extends Citizen {
+public class Sniper extends Citizen {
 
-    public CommonCitizen(String name) {
+    public Sniper(String name) {
         super(name);
-        super.type = "common";
+        super.type = "sniper";
     }
+
 
     @Override
     public String toString() {
-        return "CommonCitizen{" +
+        return "Sniper{" +
                 "name='" + name + '\'' +
                 ", category='" + category + '\'' +
                 ", type='" + type + '\'' +
