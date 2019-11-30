@@ -25,7 +25,21 @@ public class ShufflingCards {
         Person.getPersons().add(person19);
         Person.getPersons().add(person20);
 
-
+        //counts the number of mafias and citizens
+        int numberOfMafias = 0;
+        int numberOfCitizen = 0;
+        for (Person p : Person.getPersons()) {
+            if (p.getCategory().equals("mafia")) {
+                numberOfMafias++;
+            }
+            if (p.getCategory().equals("citizen")) {
+                numberOfCitizen++;
+            }
+        }
+        Mafia.setCounterOfMafias(numberOfMafias);
+        Citizen.setCounterOfCitizens(numberOfCitizen);
+        Citizen.setCounterOfCitizens(numberOfCitizen);
     }
+
 
 }
