@@ -38,7 +38,6 @@ public class ShufflingCards {
         }
         Mafia.setCounterOfMafias(numberOfMafias);
         Citizen.setCounterOfCitizens(numberOfCitizen);
-        Citizen.setCounterOfCitizens(numberOfCitizen);
     }
 
 
