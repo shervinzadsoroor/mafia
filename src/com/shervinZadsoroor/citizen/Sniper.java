@@ -8,7 +8,7 @@ public class Sniper extends Citizen {
 
     public Sniper(String name) {
         super(name);
-        super.type = "sniper";
+        setType("sniper");
     }
 
     @Override
@@ -19,10 +19,6 @@ public class Sniper extends Citizen {
 
     @Override
     public String toString() {
-        return "Sniper{" +
-                "name='" + name + '\'' +
-                ", category='" + category + '\'' +
-                ", type='" + type + '\'' +
-                '}';
+        return "Sniper{}";
     }
 }

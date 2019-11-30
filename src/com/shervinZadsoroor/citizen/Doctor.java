@@ -8,7 +8,7 @@ public class Doctor extends Citizen {
 
     public Doctor(String name) {
         super(name);
-        super.type = "doctor";
+        setType("doctor");
     }
     @Override
     public String talk() {
@@ -18,10 +18,6 @@ public class Doctor extends Citizen {
 
     @Override
     public String toString() {
-        return "Doctor{" +
-                "name='" + name + '\'' +
-                ", category='" + category + '\'' +
-                ", type='" + type + '\'' +
-                '}';
+        return "Doctor{}";
     }
 }

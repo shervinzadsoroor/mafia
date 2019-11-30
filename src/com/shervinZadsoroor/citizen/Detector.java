@@ -8,7 +8,7 @@ public class Detector extends Citizen {
 
     public Detector(String name) {
         super(name);
-        super.type = "detector";
+        setType("detector");
     }
     @Override
     public String talk() {
@@ -18,10 +18,6 @@ public class Detector extends Citizen {
 
     @Override
     public String toString() {
-        return "Detector{" +
-                "name='" + name + '\'' +
-                ", category='" + category + '\'' +
-                ", type='" + type + '\'' +
-                '}';
+        return "Detector{}";
     }
 }

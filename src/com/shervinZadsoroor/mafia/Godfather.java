@@ -6,10 +6,9 @@ import java.util.Random;
 
 public class Godfather extends Mafia {
 
-
     public Godfather(String name) {
         super(name);
-        super.type = "godfather";
+        setType("godfather");
     }
 
     @Override
@@ -20,10 +19,6 @@ public class Godfather extends Mafia {
 
     @Override
     public String toString() {
-        return "Godfather{" +
-                "name='" + name + '\'' +
-                ", category='" + category + '\'' +
-                ", type='" + type + '\'' +
-                '}';
+        return "Godfather{}";
     }
 }

@@ -6,10 +6,9 @@ import java.util.Random;
 
 public class CommonMafia extends Mafia {
 
-
     public CommonMafia(String name) {
         super(name);
-        super.type = "common";
+        setType("common");
     }
 
     @Override
@@ -20,10 +19,6 @@ public class CommonMafia extends Mafia {
 
     @Override
     public String toString() {
-        return "CommonMafia{" +
-                "name='" + name + '\'' +
-                ", category='" + category + '\'' +
-                ", type='" + type + '\'' +
-                '}';
+        return "CommonMafia{}";
     }
 }

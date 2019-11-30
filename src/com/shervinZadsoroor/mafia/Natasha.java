@@ -8,7 +8,7 @@ public class Natasha extends Mafia {
 
     public Natasha(String name) {
         super(name);
-        super.type = "natasha";
+        setType("natasha");
     }
 
     @Override
@@ -19,10 +19,6 @@ public class Natasha extends Mafia {
 
     @Override
     public String toString() {
-        return "Natasha{" +
-                "name='" + name + '\'' +
-                ", category='" + category + '\'' +
-                ", type='" + type + '\'' +
-                '}';
+        return "Natasha{}";
     }
 }
