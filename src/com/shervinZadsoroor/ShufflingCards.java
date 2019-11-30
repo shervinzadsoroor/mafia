@@ -6,7 +6,6 @@ import com.shervinZadsoroor.mafia.*;
 public class ShufflingCards {
     public static void execute() {
 
-
         for (int i = 1; i <= 3; i++) {
             CommonMafia person = new CommonMafia("person" + i);
             Person.getPersons().add(person);
