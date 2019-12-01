@@ -29,7 +29,7 @@ public class Vote {
         int maxValue = maxValue(map);
 
         System.out.println("vote result : " + map);
-        System.out.println("max value is : " + maxValue);
+       // System.out.println("max value is : " + maxValue);
 
         boolean isNotDuplicated = true;
         int counter = 0;
@@ -50,11 +50,13 @@ public class Vote {
             if (Person.getPersons().get(key).getCategory().equals("citizen")) {
                 Citizen.setCounterOfCitizens(Citizen.getCounterOfCitizens() - 1);
             }
-            System.out.printf("\n%s omitted!!!\n",Person.getPersons().get(key).getName());
+            System.out.printf("\n%s omitted!!!\n", Person.getPersons().get(key).getName());
             Person.getPersons().remove(key);
+        } else {
+            System.out.println("no body omitted!!!");
         }
         //System.out.println("the key must be omit is : " + key);
-        System.out.printf("number of mafias : %d\t number of citizens : %d\n---------------------------------------------------\n"
+        System.out.printf("this is only for monitoring not a log: \nnumber of mafias : %d\t number of citizens : %d\n__________________________ LOG __________________________\n"
                 , Mafia.getCounterOfMafias(), Citizen.getCounterOfCitizens());
 
     }

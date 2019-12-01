@@ -14,9 +14,10 @@ public class God {
         FirstNight.execute();
         while (true) {
             round++;
-            System.out.printf("\n\n++++++++++++++++++++++++  round %d  ++++++++++++++++++++++++\n", round);
-            System.out.println("number of mafias : " + Mafia.getCounterOfMafias() + "\nnumber of citizens : " + Citizen.getCounterOfCitizens());
+            System.out.printf("\n\n#####################  R O U N D  %d  #####################\n", round);
+            System.out.println("this is only for monitoring not a log: \nnumber of mafias : " + Mafia.getCounterOfMafias() + "\nnumber of citizens : " + Citizen.getCounterOfCitizens());
             Person.startDiscussion();
+            System.out.println("_________________________________________________________");
             Vote.execute();// omits the vote
             //checking the conditions for winning ====================================
             if (ConditionForWin.citizenWins()) {

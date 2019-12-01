@@ -3,6 +3,7 @@ package com.shervinZadsoroor.mafia;
 import com.shervinZadsoroor.Person;
 import com.shervinZadsoroor.citizen.Citizen;
 import com.shervinZadsoroor.citizen.Doctor;
+import com.shervinZadsoroor.citizen.Sniper;
 import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
 
 import java.util.ArrayList;
@@ -40,16 +41,27 @@ public abstract class Mafia extends Person {
                 indexOfCitizens.add(i);
             }
         }
-        System.out.println(indexOfCitizens);
+       // System.out.println(indexOfCitizens);
         int killIndex = new Random().nextInt(indexOfCitizens.size());
-        int kill = indexOfCitizens.get(killIndex);//int kill is the index number of person in person list that must kill
-        int save = Doctor.saveCitizen();// save int the index number of person who doctor wants to save
+        int kill = indexOfCitizens.get(killIndex);//int kill is the index number of person in person list that must be killed
+        int save = Doctor.saveCitizen();// the index number of person who doctor wants to save
         if (save == kill) {
             System.out.println("last night a person saved by doctor!");
         } else {
             System.out.printf("last night %s has been killed\n", Person.getPersons().get(kill).getName());
             Person.getPersons().remove(kill);
             Citizen.setCounterOfCitizens(Citizen.getCounterOfCitizens() - 1);
+        }
+        int snipe = Sniper.snipe();// the index number of persons who is snipped
+        if (snipe != save) {
+            System.out.printf("last night %s has been snipped!\n", Person.getPersons().get(snipe).getName());
+            if (Person.getPersons().get(snipe).getCategory().equals("citizen")) {
+                Citizen.setCounterOfCitizens(Citizen.getCounterOfCitizens() - 1);
+            }
+            if (Person.getPersons().get(snipe).getCategory().equals("mafia")) {
+                Mafia.setCounterOfMafias(Mafia.getCounterOfMafias() - 1);
+            }
+            Person.getPersons().remove(snipe);
         }
 
     }

@@ -22,7 +22,7 @@ public abstract class Person {
         for (Person p : getPersons()) {
             System.out.println(p.name + " : " + p.talk());
         }
-        System.out.println("\n=========================================================\n");
+
     }
 
     public Person(String name) {
