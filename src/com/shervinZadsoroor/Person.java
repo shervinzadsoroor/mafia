@@ -29,13 +29,14 @@ public abstract class Person {
     public static void startDiscussion() {
         //checking is natasha exist or not
         boolean isNatashaExists = false;
+        int silent = 0;
         for (Person p : persons) {
             if (p.getType().equals("natasha")) {
                 isNatashaExists = true;
+                silent = Natasha.silencing();
             }
         }
         if (isNatashaExists) {
-            int silent = Natasha.silencing();
             System.out.println("\n====================== discussions ======================");
             for (int i = 0; i < getPersons().size(); i++) {
                 if (silent == i) {

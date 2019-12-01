@@ -41,19 +41,36 @@ public abstract class Mafia extends Person {
                 indexOfCitizens.add(i);
             }
         }
-       // System.out.println(indexOfCitizens);
         int killIndex = new Random().nextInt(indexOfCitizens.size());
-        int kill = indexOfCitizens.get(killIndex);//int kill is the index number of person in person list that must be killed
-        int save = Doctor.saveCitizen();// the index number of person who doctor wants to save
-        if (save == kill) {
+        int kill = indexOfCitizens.get(killIndex);  //int kill is the index number of person in person list that must be killed
+
+        //checking the existence of doctor......................................
+        boolean isDoctorexists = false;
+        int save = 0;
+        for (Person p : getPersons()) {
+            if (p.getType().equals("doctor")) {
+                isDoctorexists = true;
+                save = Doctor.saveCitizen();  // the index number of person who doctor wants to save
+            }
+        }
+        if (isDoctorexists && save == kill) {
             System.out.println("last night a person saved by doctor!");
         } else {
             System.out.printf("last night %s has been killed\n", Person.getPersons().get(kill).getName());
             Person.getPersons().remove(kill);
             Citizen.setCounterOfCitizens(Citizen.getCounterOfCitizens() - 1);
         }
-        int snipe = Sniper.snipe();// the index number of persons who is snipped
-        if (snipe != save) {
+
+        //checking the existence of sniper.......................................
+        boolean isSniperExists = false;
+        int snipe = 0;
+        for (Person p : getPersons()) {
+            if (p.getType().equals("sniper")) {
+                isSniperExists = true;
+                snipe = Sniper.snipe();  // the index number of persons who is snipped
+            }
+        }
+        if (isSniperExists && snipe != save) {
             System.out.printf("last night %s has been snipped!\n", Person.getPersons().get(snipe).getName());
             if (Person.getPersons().get(snipe).getCategory().equals("citizen")) {
                 Citizen.setCounterOfCitizens(Citizen.getCounterOfCitizens() - 1);

@@ -12,7 +12,6 @@ public class Godfather extends Mafia {
     }
 
 
-
     @Override
     public String talk() {
         String str = Person.getDiscussions()[new Random().nextInt(20)];
