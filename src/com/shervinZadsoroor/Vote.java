@@ -45,6 +45,7 @@ public class Vote {
             Person.getPersons().remove(key);
         }
         System.out.println("the key must be omit is : " + key);
+        System.out.printf("number of mafias : %d\t number of citizens : %d",Mafia.getCounterOfMafias(),Citizen.getCounterOfCitizens());
 
     }
 
