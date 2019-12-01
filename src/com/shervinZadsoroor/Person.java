@@ -1,5 +1,7 @@
 package com.shervinZadsoroor;
 
+import com.shervinZadsoroor.mafia.Natasha;
+
 import java.util.ArrayList;
 
 public abstract class Person {
@@ -17,10 +19,36 @@ public abstract class Person {
     public abstract String talk(); // discussion about who is mafia or not
 
     //prints every person's discussion
-    public static void startDiscussion() {
+    public static void startDiscussionInFirstDay() {
         System.out.println("\n====================== discussions ======================");
         for (Person p : getPersons()) {
             System.out.println(p.name + " : " + p.talk());
+        }
+    }
+
+    public static void startDiscussion() {
+        //checking is natasha exist or not
+        boolean isNatashaExists = false;
+        for (Person p : persons) {
+            if (p.getType().equals("natasha")) {
+                isNatashaExists = true;
+            }
+        }
+        if (isNatashaExists) {
+            int silent = Natasha.silencing();
+            System.out.println("\n====================== discussions ======================");
+            for (int i = 0; i < getPersons().size(); i++) {
+                if (silent == i) {
+                    System.out.printf("%s is silent !!!!!!!!!!!!!!!!!!!!!!\n", Person.getPersons().get(i).getName());
+                } else {
+                    System.out.println(Person.getPersons().get(i).getName() + " : " + Person.getPersons().get(i).talk());
+                }
+            }
+        } else { //if natasha doesn't exists
+            System.out.println("\n====================== discussions ======================");
+            for (Person p : getPersons()) {
+                System.out.println(p.name + " : " + p.talk());
+            }
         }
 
     }

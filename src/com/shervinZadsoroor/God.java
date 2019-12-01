@@ -9,7 +9,7 @@ public class God {
         int round = 0;
 
         ShufflingCards.execute();
-        Person.startDiscussion();
+        Person.startDiscussionInFirstDay();
         // mafia identify each other at first night
         FirstNight.execute();
         while (true) {
