@@ -1,5 +1,8 @@
 package com.shervinZadsoroor;
 
+import com.shervinZadsoroor.citizen.Citizen;
+import com.shervinZadsoroor.mafia.Mafia;
+
 import java.util.*;
 
 public class Vote {
@@ -33,6 +36,12 @@ public class Vote {
         int key = 0;
         if (isNotDuplicated) {
             key = getKey(map, maxValue);
+            if (Person.getPersons().get(key).getCategory().equals("mafia")) {
+                Mafia.setCounterOfMafias(Mafia.getCounterOfMafias() - 1);
+            }
+            if (Person.getPersons().get(key).getCategory().equals("citizen")) {
+                Citizen.setCounterOfCitizens(Citizen.getCounterOfCitizens() - 1);
+            }
             Person.getPersons().remove(key);
         }
         System.out.println("the key must be omit is : " + key);
