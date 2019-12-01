@@ -27,7 +27,6 @@ public class God {
                 System.out.printf("mafias win in round %d!\n", round);
                 break;
             }
-            //end of checking ========================================================
             Mafia.kill();// kills a citizen
             if (ConditionForWin.citizenWins()) {
                 System.out.printf("citizens win in round %d!\n", round);
@@ -37,6 +36,7 @@ public class God {
                 System.out.printf("mafias win in round %d!\n", round);
                 break;
             }
+            //end of checking ========================================================
         }
     }
 
