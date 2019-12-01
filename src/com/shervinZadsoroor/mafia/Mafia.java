@@ -4,14 +4,16 @@ import com.shervinZadsoroor.Person;
 import com.shervinZadsoroor.citizen.Citizen;
 import com.shervinZadsoroor.citizen.Doctor;
 import com.shervinZadsoroor.citizen.Sniper;
-import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
 
 import java.util.ArrayList;
 import java.util.Random;
 
 public abstract class Mafia extends Person {
+    //in first night mafias must identify themselves , so there is a list
+    private static ArrayList<Person> mafias = new ArrayList<>();
 
     private static int counterOfMafias;
+
 
     public static int getCounterOfMafias() {
         return counterOfMafias;
@@ -20,9 +22,6 @@ public abstract class Mafia extends Person {
     public static void setCounterOfMafias(int counterOfMafias) {
         Mafia.counterOfMafias = counterOfMafias;
     }
-
-    //in first night mafias must identify themselves , so there is a list
-    private static ArrayList<Person> mafias = new ArrayList<>();
 
 
     public static ArrayList<Person> getMafias() {
