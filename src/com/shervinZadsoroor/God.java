@@ -14,20 +14,29 @@ public class God {
         FirstNight.execute();
         while (true) {
             round++;
-            System.out.printf("\n\n++++++++++++++++++++++++  round %d  ++++++++++++++++++++++++\n",round);
+            System.out.printf("\n\n++++++++++++++++++++++++  round %d  ++++++++++++++++++++++++\n", round);
             System.out.println("number of mafias : " + Mafia.getCounterOfMafias() + "\nnumber of citizens : " + Citizen.getCounterOfCitizens());
             Person.startDiscussion();
-            Vote.execute();
+            Vote.execute();// omits the vote
             //checking the conditions for winning ====================================
             if (ConditionForWin.citizenWins()) {
-                System.out.printf("citizen win in round %d!\n",round);
+                System.out.printf("citizens win in round %d!\n", round);
                 break;
             }
             if (ConditionForWin.mafiaWins()) {
-                System.out.printf("mafia win in round %d!\n",round);
+                System.out.printf("mafias win in round %d!\n", round);
                 break;
             }
             //end of checking ========================================================
+            Mafia.kill();// kills a citizen
+            if (ConditionForWin.citizenWins()) {
+                System.out.printf("citizens win in round %d!\n", round);
+                break;
+            }
+            if (ConditionForWin.mafiaWins()) {
+                System.out.printf("mafias win in round %d!\n", round);
+                break;
+            }
         }
     }
 

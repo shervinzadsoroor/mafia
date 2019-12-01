@@ -1,6 +1,7 @@
 package com.shervinZadsoroor;
 
 import com.shervinZadsoroor.citizen.Citizen;
+import com.shervinZadsoroor.citizen.Detective;
 import com.shervinZadsoroor.mafia.Mafia;
 
 import java.util.*;
@@ -11,9 +12,16 @@ public class Vote {
         ArrayList<Integer> votes = new ArrayList<>();
         int numOfPersons = Person.getPersons().size();
         for (int i = 0; i < Person.getPersons().size(); i++) {
-            int vote = new Random().nextInt(numOfPersons);
+            int vote;
+            //if the voter is detective -------------------------------
+            if (Person.getPersons().get(i).getType().equals("detective")) {
+                vote = Detective.detecting();
+            } else {
+                vote = new Random().nextInt(numOfPersons);
+            }
             votes.add(vote);
         }
+
         Map<Integer, Integer> map = new HashMap<>();
         for (Integer i : votes) {
             map.put(i, Collections.frequency(votes, i));
@@ -42,9 +50,10 @@ public class Vote {
             if (Person.getPersons().get(key).getCategory().equals("citizen")) {
                 Citizen.setCounterOfCitizens(Citizen.getCounterOfCitizens() - 1);
             }
+            System.out.printf("\n%s omitted!!!\n",Person.getPersons().get(key).getName());
             Person.getPersons().remove(key);
         }
-        System.out.println("the key must be omit is : " + key);
+        //System.out.println("the key must be omit is : " + key);
         System.out.printf("number of mafias : %d\t number of citizens : %d\n---------------------------------------------------\n"
                 , Mafia.getCounterOfMafias(), Citizen.getCounterOfCitizens());
 

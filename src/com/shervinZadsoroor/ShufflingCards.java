@@ -16,7 +16,7 @@ public class ShufflingCards {
         }
         Godfather person16 = new Godfather("person16");
         Natasha person17 = new Natasha("person17");
-        Detector person18 = new Detector("person18");
+        Detective person18 = new Detective("person18");
         Doctor person19 = new Doctor("person19");
         Sniper person20 = new Sniper("person20");
         Person.getPersons().add(person16);
