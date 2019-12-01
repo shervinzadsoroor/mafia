@@ -20,7 +20,7 @@ public class Vote {
         }
         int maxValue = maxValue(map);
 
-        System.out.println(map);
+        System.out.println("vote result : " + map);
         System.out.println("max value is : " + maxValue);
 
         boolean isNotDuplicated = true;
@@ -45,7 +45,8 @@ public class Vote {
             Person.getPersons().remove(key);
         }
         System.out.println("the key must be omit is : " + key);
-        System.out.printf("number of mafias : %d\t number of citizens : %d",Mafia.getCounterOfMafias(),Citizen.getCounterOfCitizens());
+        System.out.printf("number of mafias : %d\t number of citizens : %d\n---------------------------------------------------\n"
+                , Mafia.getCounterOfMafias(), Citizen.getCounterOfCitizens());
 
     }
 

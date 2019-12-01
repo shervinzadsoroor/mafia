@@ -18,9 +18,11 @@ public abstract class Person {
 
     //prints every person's discussion
     public static void startDiscussion() {
+        System.out.println("\n====================== discussions ======================");
         for (Person p : getPersons()) {
             System.out.println(p.name + " : " + p.talk());
         }
+        System.out.println("\n=========================================================\n");
     }
 
     public Person(String name) {

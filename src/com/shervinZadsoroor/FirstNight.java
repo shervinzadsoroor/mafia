@@ -11,5 +11,6 @@ public class FirstNight {
                 Mafia.getMafias().add(p);
             }
         }
+        System.out.println("mafia identified each other!");
     }
 }
