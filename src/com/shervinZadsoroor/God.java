@@ -14,6 +14,7 @@ public class God {
        // while (true) {
         System.out.println("number of mafias : "+Mafia.getCounterOfMafias()+"\nnumber of citizens : "+ Citizen.getCounterOfCitizens());
         Person.startDiscussion();
+        Vote.execute();
         // }
     }
 

@@ -55,11 +55,6 @@ public abstract class Person {
         return persons;
     }
 
-//    public static ArrayList<String> getDiscussions() {
-//        return discussions;
-//    }
-
-
     public static String[] getDiscussions() {
         return discussions;
     }
